@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
  
 
 ### Added
+## 2024-06-02
+- Add support for "bat" command
+
 ## 2024-03-26
 - fix static ip mode
 
