@@ -449,7 +449,7 @@ struct pylonBattery
   long  cellTempHigh;
   long  cellVoltLow;
   long  cellVoltHigh;
-  char bal[2];          //N | Y
+  char bal[4];          //N | Y
   char baseState[9];    //Charge | Dischg | Idle
   char voltageState[9]; //Normal
   char currentState[9]; //Normal
@@ -814,7 +814,7 @@ bool parseBatResponse(const char* pStr)
       extractStr(pLineStart, 49, g_stack.cells[ix].voltageState, sizeof(g_stack.cells[ix].voltageState));
       extractStr(pLineStart, 62, g_stack.cells[ix].currentState, sizeof(g_stack.cells[ix].currentState));
       extractStr(pLineStart, 73, g_stack.cells[ix].tempState, sizeof(g_stack.cells[ix].tempState));
-      extractStr(pLineStart, 115, g_stack.cells[ix].bal, sizeof(g_stack.cells[ix].bal));
+      extractStr(pLineStart, 116, g_stack.cells[ix].bal, sizeof(g_stack.cells[ix].bal));
       g_stack.cells[ix].voltage = extractInt(pLineStart, 9);
       g_stack.cells[ix].current = extractInt(pLineStart, 18);
       g_stack.cells[ix].tempr   = extractInt(pLineStart, 27);
